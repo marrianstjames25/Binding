@@ -1,0 +1,31 @@
+﻿<Window x:Class="Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Binding"
+        mc:Ignorable="d"
+        Title="BindingData" Height="450" Width="450">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Yellow"/>
+                <GradientStop Color="#FF78D4A8" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <TextBox FontSize="25" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=BoundNumber, Mode=TwoWay}" VerticalAlignment="Center" Width="57" Height="57"/>
+
+
+        <Slider Value="{Binding Path=BoundNumber, Mode=TwoWay}"
+            HorizontalAlignment="Center" Margin="0,56,0,0" Grid.Row="1" VerticalAlignment="Top" Width="372" Height="68" Maximum="500"/>
+        <Button Content="Reset" HorizontalAlignment="Center" Margin="0,73,0,0" Grid.Row="2" VerticalAlignment="Top" Height="33" Width="86" Click="Button_Click"/>
+
+
+    </Grid>
+</Window>
